@@ -6,3 +6,7 @@
 5 - Mandar datos del formulario (Habrá que hacer cambios en la API)
 6 - Guardar datos
 7 - Mandar contraseña Hasheada a la API para guardarla en BD
+8 - Crear formulario de inicio de sesión:
+    -- Crear Switch para cambiar entre registro e inicio de sesión
+    -- Preparar formulario
+    -- Interacción con la API
