@@ -38,7 +38,7 @@ export const GeneratePass = () => {
         }, []);
 
     return (
-        <h1>Pass: {password.password}</h1>
+        <h1>Pass:</h1>
     )
 
 }

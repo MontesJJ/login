@@ -1,3 +1,4 @@
+import './App.css';
 import SecureLogin from './components/SecureLogin';
 import { GeneratePass } from './components/GeneratePass';
 
