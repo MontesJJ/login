@@ -1,16 +1,22 @@
 import { useState } from 'react';
+import { generatePass } from './generatePass';
 
 export default function SecureLogin () {
 
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
 
+    const handleClick = async () => {
+        const generatedPassword = await generatePass();
+        setPassword(generatedPassword.password);
+    }
+
     return (
         <form>
             {/*USUARIO*/}
             <div className="input__container username">
             <div className="shadow__input"></div>
-            <button className="input__button__shadow">
+            <button className="input__button__shadow" type='button'>
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -37,7 +43,7 @@ export default function SecureLogin () {
             {/*CONTRASEÑA*/}
             <div className="input__container password">
             <div className="shadow__input"></div>
-            <button className="input__button__shadow">
+            <button className="input__button__shadow" onClick={handleClick} type='button'>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -58,7 +64,10 @@ export default function SecureLogin () {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
             />
-            </div>  
+            </div>
+            
+            {/*REGISTRO*/}
+            <div className="input__container registrer" onClick={handleClick}>LET'S DO IT!</div>
 
         </form>
     )
