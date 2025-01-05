@@ -8,7 +8,7 @@ export const generatePass = async () => {
         "excludeSimilar": false
     }
 
-    const apiUrl = 'http://localhost:4000/api/generate';
+    const apiUrl = 'http://localhost:4000/api/passwords/generate';
     
     try {
         const response = await fetch(apiUrl, {
