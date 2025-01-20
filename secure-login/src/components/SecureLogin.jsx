@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { generatePass } from './generatePass';
+import { generateUser } from './generateUser';
 
 export default function SecureLogin () {
 
@@ -11,12 +12,17 @@ export default function SecureLogin () {
         setPassword(generatedPassword.password);
     }
 
+    const handleUser = async () => {
+        const generatedUser = await generateUser();
+        setUserName(generatedUser.user);
+    }
+
     return (
         <form>
             {/*USUARIO*/}
             <div className="input__container username">
             <div className="shadow__input"></div>
-            <button className="input__button__shadow" type='button'>
+            <button className="input__button__shadow" type='button' onClick={handleUser}>
                 <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
